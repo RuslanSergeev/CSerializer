@@ -1,0 +1,28 @@
+{
+    "structs": { 
+        "foo": {
+            "comment": "entire structure comment",
+            "member1": { "type": "uint32_t" },
+            "member2": { "type": "uint8_t", "len": 2, "comment": "an array member"},
+            "member3": { "type": "uint16_t" }
+        },
+        "bar": {
+            "member1": { "type": "uint16_t" }, 
+            "member2": { "type": "foo", "len": 2}
+        }
+    },
+    "sizeof": {
+        "uint8_t" : { "size"  : 1},
+        "int8_t"  : { "size"  : 1},
+        "uint16_t": { "size"  : 2},
+        "int16_t" : { "size"  : 2},
+        "uint32_t": { "size"  : 4},
+        "int32_t" : { "size"  : 4},
+        "uint64_t": { "size"  : 8},
+        "int64_t" : { "size"  : 8}
+    },
+    "endiannes": {
+        "host": "little-endian",
+        "network": "little-endian"
+    }
+}
