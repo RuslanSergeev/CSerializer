@@ -7,16 +7,16 @@ into a byte array that is in network layout without padding bytes in it.
 
 Following features supported:
 
- - Padding bytes filtering
+ - Padding bytes filtering  
     The padding bytes will be excluded from the serialized objects.
- - MSB or LSB bytes order
+ - MSB or LSB bytes order  
     User must explicitly specify host and network expected bytes order.
- - Structures inside structures.
+ - Structures inside structures.  
     User specifies datatypes of structures members. Data type
     may be one of the structures defined previously or latelly by user.
     The ending padding bytes will be also filtered. The alignment
     of such structures inside other structures is also computed.
- - Arrays members
+ - Arrays members  
     Structures members may be arrays. 
 
 Features to be added in future:
