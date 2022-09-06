@@ -29,7 +29,7 @@ void CSerializer_serialize(void *host_obj, uint8_t *network_buf, const struct CS
         int net_step = __CSerializer_get_net_step(layout, i);
         uint32_t host_pos = layout->host_layout[2*i];
         int host_step = 1;
-        uint32_t len = layout->net_layout[2*i+1]-layout->net_layout[2*i];
+        uint32_t len = abs((int32_t)layout->net_layout[2*i+1]-(int32_t)layout->net_layout[2*i]);
         uint32_t b;
         for (b = 0; b < len; ++b){
             *(network_buf+net_pos) = *(host+host_pos);
@@ -52,7 +52,7 @@ void CSerializer_deserialize(uint8_t *network_buf, void *host_obj, const struct 
         int net_step = __CSerializer_get_net_step(layout, i);
         uint32_t host_pos = layout->host_layout[2*i];
         int host_step = 1;
-        uint32_t len = layout->net_layout[2*i+1]-layout->net_layout[2*i];
+        uint32_t len = abs((int32_t)layout->net_layout[2*i+1]-(int32_t)layout->net_layout[2*i]);
         uint32_t b;
         for (b = 0; b < len; ++b){
             *(host+host_pos) = *(network_buf+net_pos);
